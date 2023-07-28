@@ -22,7 +22,7 @@ public class Medicamentos {
     private Long id;
     private String nombre;
     private String laboratorio;
-    private Date fechaFabricación;
+    private Date fechaFabricacion;
     private Date fechaVencimiento;
     private int cantidadStock;
     private int valorUnitario;

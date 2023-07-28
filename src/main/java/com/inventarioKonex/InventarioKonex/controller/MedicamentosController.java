@@ -32,7 +32,7 @@ public class MedicamentosController {
                 Medicamentos medicamento = new Medicamentos();
                 medicamento.setNombre(medicamentosDTO.getNombre());
                 medicamento.setLaboratorio(medicamentosDTO.getLaboratorio());
-                medicamento.setFechaFabricación(medicamentosDTO.getFechaFabricación());
+                medicamento.setFechaFabricacion(medicamentosDTO.getFechaFabricacion());
                 medicamento.setFechaVencimiento(medicamentosDTO.getFechaVencimiento());
                 medicamento.setCantidadStock(medicamentosDTO.getCantidadStock());
                 medicamento.setValorUnitario(medicamentosDTO.getValorUnitario());
@@ -75,7 +75,7 @@ public class MedicamentosController {
             // Actualizar los campos del medicamento existente con los datos del DTO
             medicamentoExistente.setNombre(medicamentosDTO.getNombre());
             medicamentoExistente.setLaboratorio(medicamentosDTO.getLaboratorio());
-            medicamentoExistente.setFechaFabricación(medicamentosDTO.getFechaFabricación());
+            medicamentoExistente.setFechaFabricacion(medicamentosDTO.getFechaFabricacion());
             medicamentoExistente.setFechaVencimiento(medicamentosDTO.getFechaVencimiento());
             medicamentoExistente.setCantidadStock(medicamentosDTO.getCantidadStock());
             medicamentoExistente.setValorUnitario(medicamentosDTO.getValorUnitario());
