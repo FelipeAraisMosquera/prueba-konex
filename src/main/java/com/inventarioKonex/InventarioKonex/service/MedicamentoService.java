@@ -1,6 +1,7 @@
 package com.inventarioKonex.InventarioKonex.service;
 
 import com.inventarioKonex.InventarioKonex.model.entity.Medicamentos;
+import com.inventarioKonex.InventarioKonex.model.entity.Venta;
 import com.inventarioKonex.InventarioKonex.repository.IMedicamentosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,6 +45,10 @@ public class MedicamentoService {
     public Page<Medicamentos> getMedicamentos(String nombre, String laboratorio, int pageNumber, int pageSize) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         return medicamentosRepository.findByNombreContainingIgnoreCaseOrLaboratorioContainingIgnoreCase(nombre, laboratorio, pageable);
+    }
+
+    public List<Medicamentos> getAllDrugs(){
+        return medicamentosRepository.findAll();
     }
 
 }

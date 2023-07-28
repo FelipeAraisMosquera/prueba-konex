@@ -9,9 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/medicamentos")
 public class MedicamentosController {
 
@@ -44,8 +46,13 @@ public class MedicamentosController {
 
     }
 
+    @GetMapping//Listar
+    public List<Medicamentos> getAllMedicaments(){
+        return medicamentoService.getAllDrugs();
+    }
+
     @GetMapping("/{id}")//Consultar
-    public Medicamentos findMedicamentos(@PathVariable Long id){
+    public Medicamentos findMedicamento(@PathVariable Long id){
         return medicamentoService.findMedicamentosById(id);
     }
 
@@ -79,7 +86,7 @@ public class MedicamentosController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-   @GetMapping
+   @GetMapping("/page")
     public ResponseEntity<Page<Medicamentos>> getMedicaments(
             @RequestParam(required = false) String Nombre,
             @RequestParam(required = false) String Laboratorio,
